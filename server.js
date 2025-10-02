@@ -11,8 +11,10 @@ const port = process.env.PORT || 8080;
 // Serve static files from the 'dist' directory
 app.use(express.static(path.join(__dirname, 'dist')));
 
-// For any other request, serve the index.html file for client-side routing
-app.get('*', (req, res) => {
+// The 'catch-all' handler: for any request that doesn't match a static file,
+// send back index.html. This is required for SPA routing.
+// We use a regex to avoid the path-to-regexp error with a simple '*'.
+app.get(/.* /, (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
