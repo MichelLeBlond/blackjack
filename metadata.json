@@ -1,0 +1,5 @@
+{
+  "name": "React Blackjack",
+  "description": "A simple Blackjack game built with React, TypeScript, and Tailwind CSS. Test your luck against the dealer!",
+  "requestFramePermissions": []
+}
